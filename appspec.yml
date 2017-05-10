@@ -23,22 +23,8 @@ os: linux
 #   "files" section altogether. A blank or incomplete "files" section
 #   may cause associated deployments to fail.
 files:
-  - source: app.js
-    destination: /test/
-  - source: appspec.yml
-    destination: /test/
-  - source: bin
-    destination: /test/
-  - source: node_modules/
-    destination: /test/
-  - source: package.json
-    destination: /test/
-  - source: public/
-    destination: /test/
-  - source: routes/
-    destination: /test/
-  - source: views/
-    destination: /test/
+  - source: /
+    destination: /home/ec2-user/test/
 # For deployments to Amazon Linux, Ubuntu Server, or RHEL instances,
 #   you can specify a "permissions" 
 #   section here that describes special permissions to apply to the files 

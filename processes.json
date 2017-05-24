@@ -1,0 +1,9 @@
+//processes.json:
+    {
+      "apps" : [{
+        "name"        : "eyeseauExpress4App",
+        "script"      : "bin/www",
+        "watch"       : "../",
+        "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+      }]
+    }

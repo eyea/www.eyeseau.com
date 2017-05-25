@@ -1,21 +1,39 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/css/style.css' />
-    <link rel="stylesheet" href='/css/common.css'>
-  </head>
-  <body>
-
+<% include header %>
     <nav>
       <h2 id="nav-head"> <%= head %> </h2>
       <p id="nav-p">
         <input type="button" name="login" value="登录">
-        <input type="button" name="reg" value="注册">
+        <!--<input type="button" name="reg" value="注册">-->
       </p>
     </nav>
     
     <p> <%= message %>  </p>
+
+    <!--登录部分数据库尝试-->
+    <!--<form action="homepage" method="post">
+      <p>
+        <label for="username">用户名</label>
+        <input id="userid" type="text" placeholder="输入用户名">
+      </p>
+      <p>
+        <label for="password">密码</label>
+        <input id="password" type="password" placeholder="输入密码">
+      </p>
+      <input id="submit" type="submit">
+    </form>-->
+    <form action="homepage" method="post">
+	    <p>
+	    	<span>userId:</span>
+	    	<br>
+	    	<input id="userid" name="userid" type="text">
+	    </p>
+	    <p>
+	    	<span>password:</span>
+	    	<br>
+	    	<input id="password" name="password" type="password">
+	    </p>
+	    <p><input type="submit" value="submit"></p>
+    </form>    
 
     <% include footer %>
 

@@ -5,13 +5,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
+var mongoose = require('mongoose');
+var user = require('./models/user');
+mongoose.connect('mongodb://localhost/eyeseau');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
-// var interviews=require('./routes/interviews');
-
 //把路由控制器和实现路由功能的函数都放到 index.js 里，app.js 中只有一个总的路由接口。
-var routers = require('./routes/index');
+// var routers = require('./routes/index');
 var app = express();
 
 // view engine setup
@@ -27,13 +27,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/dist')));
 
-// routers(app)
-routers(app);
-
+// routers(app);
 app.use('/', index);
-app.use('/users', users);
-// interviews用来总结这几天的面试题
-// app.use('/interviews', interviews);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

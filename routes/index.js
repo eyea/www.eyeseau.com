@@ -12,7 +12,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var user = require('../models/user').user;
-mongoose.connect('mongodb://localhost/hello-world');
+mongoose.connect('mongodb://localhost/eyeseau');
 
 
 // module.exports = function(app){
